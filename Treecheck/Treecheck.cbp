@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/binaryTree.h" />
+		<Unit filename="include/headerStats.h" />
+		<Unit filename="include/manager.h" />
+		<Unit filename="include/treeNode.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/binaryTree.cpp" />
+		<Unit filename="src/manager.cpp" />
+		<Unit filename="src/treeNode.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

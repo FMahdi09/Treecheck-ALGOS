@@ -1,9 +1,11 @@
-#include <iostream>
+#include "manager.h"
 
-using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    manager program;
+
+    program.start();
+
     return 0;
 }

@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1681844064 source:c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\main.cpp
+	"manager.h"
+
+1681899230 c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\include\manager.h
+	<iostream>
+	<string>
+	<limits>
+	"binaryTree.h"
+
+1681900380 source:c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\src\manager.cpp
+	"manager.h"
+
+1681900328 c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\include\binarytree.h
+	<iostream>
+	<string>
+	<fstream>
+	"headerStats.h"
+	"treeNode.h"
+
+1681900613 source:c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\src\binarytree.cpp
+	"binaryTree.h"
+
+1681897868 c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\include\treenode.h
+	<iostream>
+	<algorithm>
+	"headerStats.h"
+
+1681900792 source:c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\src\treenode.cpp
+	"treeNode.h"
+
+1681899364 c:\users\fabia\onedrive\dokumente\technikum\2 ss 2023\algorithmen und datenstrukturen\programmierbeispiele\2\treecheck\include\headerstats.h
+	<limits>
+
