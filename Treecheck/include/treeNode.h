@@ -2,9 +2,8 @@
 #define TREENODE_H
 
 #include <iostream>
-#include <algorithm>
 
-#include "headerStats.h"
+#include "nodeStatistics.h"
 
 class treeNode
 {
@@ -17,7 +16,9 @@ class treeNode
 
         //Functions
         void appendKey(int key);
-        nodeStats getStats();
+        nodeStatistics getStats();
+        int getMax();
+        int getMin();
 
     private:
         //Variables

@@ -45,9 +45,9 @@ void treeNode::appendKey(int key)
 
 //checks if AVL-conditions are met
 //returns statistics about the current node and its subtree to the node above
-nodeStats treeNode::getStats()
+nodeStatistics treeNode::getStats()
 {
-    nodeStats rightStats, leftStats, curStats;
+    nodeStatistics rightStats, leftStats, curStats;
 
     //get statistics of the subNodes
     //if subNode does not exists use default values (listed in headerStats.h)
@@ -63,12 +63,6 @@ nodeStats treeNode::getStats()
 
     //set max depth of the current subtree
     curStats.depth = rightStats.depth > leftStats.depth ? rightStats.depth + 1 : leftStats.depth + 1;
-
-    //set max key value of the current subtree
-    curStats.maxKey = std::max(key, std::max(rightStats.maxKey, leftStats.maxKey));
-
-    //set min key value of the current subtree
-    curStats.minKey = std::min(key, std::min(rightStats.minKey, leftStats.minKey));
 
     curStats.total += key + leftStats.total + rightStats.total;
     curStats.counter += leftStats.counter + rightStats.counter + 1;
@@ -88,4 +82,24 @@ nodeStats treeNode::getStats()
     }
 
     return curStats;
+}
+
+int treeNode::getMax()
+{
+    if(rightNode != nullptr)
+    {
+        return rightNode->getMax();
+    }
+
+    return key;
+}
+
+int treeNode::getMin()
+{
+    if(leftNode != nullptr)
+    {
+        return leftNode->getMin();
+    }
+
+    return key;
 }

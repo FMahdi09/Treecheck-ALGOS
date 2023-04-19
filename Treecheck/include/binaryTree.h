@@ -2,26 +2,22 @@
 #define BINARYTREE_H
 
 #include <iostream>
-#include <string>
 #include <fstream>
 
-#include "headerStats.h"
 #include "treeNode.h"
+#include "nodeStatistics.h"
 
 class binaryTree
 {
     public:
         //Constructor
-        binaryTree(std::string filename);
+        binaryTree(std::ifstream& inf);
 
         //Destructor
         ~binaryTree();
 
         //Functions
-        void getStats();
-
-        //Getter
-        treeNode* getRoot() const;
+        void printAVL();
 
     private:
         //Variables
@@ -29,6 +25,7 @@ class binaryTree
 
         //Functions
         void appendKey(int key);
+
 };
 
 #endif // BINARYTREE_H

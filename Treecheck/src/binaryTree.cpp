@@ -1,17 +1,9 @@
 #include "binaryTree.h"
 
 //Constructor
-binaryTree::binaryTree(std::string filename)
+binaryTree::binaryTree(std::ifstream& inf)
 {
     root = nullptr;
-
-    //open file
-    std::ifstream inf("data\\" + filename);
-
-    if (!inf.is_open()) {
-        std::cout << "file: \"" << filename << "\" was not found. try again\n";
-        return;
-    }
 
     //read from file
     while(!inf.eof())
@@ -47,19 +39,15 @@ void binaryTree::appendKey(int key)
     }
 }
 
-void binaryTree::getStats()
+void binaryTree::printAVL()
 {
-    nodeStats treeStats = root->getStats();
+    nodeStatistics treeStats = root->getStats();
+
+    int maxKey = root->getMax();
+    int minKey = root->getMin();
 
     std::string avlStatus = treeStats.AVL == true ? "yes" : "no";
 
-    std::cout << "AVL: " << avlStatus  << "\n";
-    std::cout << "min: " << treeStats.minKey << ", max: " << treeStats.maxKey << ", avg:" << (float)treeStats.total / (float)treeStats.counter << "\n";
-}
-
-//Getter
-
-treeNode* binaryTree::getRoot() const
-{
-    return root;
+    std::cout << "AVL: " << avlStatus << "\n"
+              << "min: " << minKey << ", max: " << maxKey << ", avg: " << (float)treeStats.total / (float)treeStats.counter << "\n";
 }
