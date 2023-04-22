@@ -36,10 +36,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/NodeSearch.h" />
 		<Unit filename="include/binaryTree.h" />
 		<Unit filename="include/nodeStatistics.h" />
 		<Unit filename="include/treeNode.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/NodeSearch.cpp" />
 		<Unit filename="src/binaryTree.cpp" />
 		<Unit filename="src/treeNode.cpp" />
 		<Extensions>
