@@ -16,9 +16,20 @@ class treeNode
 
         //Functions
         void appendKey(int key);
+
+        bool searchForKey(int key);
+        void printPathTo(int key);
+
+        bool searchForSubTree(treeNode* subRoot);
+
         nodeStatistics getStats();
         int getMax();
         int getMin();
+
+        //getter
+        int getKey();
+        treeNode* getLeftNode();
+        treeNode* getRightNode();
 
     private:
         //Variables

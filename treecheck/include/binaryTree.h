@@ -18,6 +18,11 @@ class binaryTree
 
         //Functions
         void printAVL();
+        void searchForKey(std::ifstream& inf);
+        void searchForSubTree(binaryTree& subtree);
+
+        //getter
+        treeNode* getRoot();
 
     private:
         //Variables

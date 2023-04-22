@@ -103,3 +103,136 @@ int treeNode::getMin()
 
     return key;
 }
+
+bool treeNode::searchForKey(int key)
+{
+    if(this->key > key)
+    {
+        if(leftNode == nullptr)
+        {
+            return false;
+        }
+        else
+        {
+            return leftNode->searchForKey(key);
+        }
+    }
+    else if(this-> key < key)
+    {
+        if(rightNode == nullptr)
+        {
+            return false;
+        }
+        else
+        {
+            return rightNode->searchForKey(key);
+        }
+    }
+
+    return true;
+}
+
+void treeNode::printPathTo(int key)
+{
+    std::cout << this->key;
+
+    if(this->key > key)
+    {
+        if(leftNode != nullptr)
+        {
+            std::cout << ", ";
+            leftNode->printPathTo(key);
+        }
+    }
+    else if(this-> key < key)
+    {
+        if(rightNode != nullptr)
+        {
+            std::cout << ", ";
+            rightNode->printPathTo(key);
+        }
+    }
+}
+
+bool treeNode::searchForSubTree(treeNode* subRoot)
+{
+    if(key == subRoot->getKey())
+    {
+        bool rightSubTree, leftSubTree;
+
+        if(subRoot->getRightNode() == nullptr)
+        {
+            rightSubTree = true;
+        }
+        else if(rightNode == nullptr && subRoot->getRightNode() != nullptr)
+        {
+            rightSubTree = false;
+        }
+        else
+        {
+            rightSubTree = rightNode->searchForSubTree(subRoot->getRightNode());
+        }
+
+        if(subRoot->getLeftNode() == nullptr)
+        {
+            leftSubTree = true;
+        }
+        else if(leftNode == nullptr && subRoot->getLeftNode() != nullptr)
+        {
+            leftSubTree = false;
+        }
+        else
+        {
+            leftSubTree = leftNode->searchForSubTree(subRoot->getLeftNode());
+        }
+
+        if(leftSubTree && rightSubTree)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    if(this->key > subRoot->getKey())
+    {
+        if(leftNode == nullptr)
+        {
+            return false;
+        }
+        else
+        {
+            return leftNode->searchForSubTree(subRoot);
+        }
+    }
+    else if(this->key < subRoot->getKey())
+    {
+        if(rightNode == nullptr)
+        {
+            return false;
+        }
+        else
+        {
+            return rightNode->searchForSubTree(subRoot);
+        }
+    }
+
+    return false;
+}
+
+//Getter
+
+int treeNode::getKey()
+{
+    return key;
+}
+
+treeNode* treeNode::getLeftNode()
+{
+    return leftNode;
+}
+
+treeNode* treeNode::getRightNode()
+{
+    return rightNode;
+}
