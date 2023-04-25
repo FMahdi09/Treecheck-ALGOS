@@ -104,6 +104,9 @@ int treeNode::getMin()
     return key;
 }
 
+
+//searches for key in given Tree
+//of the key exists returns true else false
 bool treeNode::searchForKey(int key)
 {
     if(this->key > key)
@@ -156,6 +159,9 @@ void treeNode::printPathTo(int key)
 
 bool treeNode::searchForSubTree(treeNode* subRoot)
 {
+    //if the value in the given Node in the mainTree is
+    //equivalent to the given Node of the subTree
+    //repeat the function for both children-nodes of the subTree (if they exist)
     if(key == subRoot->getKey())
     {
         bool rightSubTree, leftSubTree;
@@ -194,6 +200,8 @@ bool treeNode::searchForSubTree(treeNode* subRoot)
         return false;
     }
 
+    //search for node in mainTree, with the same value as the given
+    //node in subTree
     if(this->key > subRoot->getKey())
     {
         if(leftNode == nullptr)

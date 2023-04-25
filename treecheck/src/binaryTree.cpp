@@ -43,6 +43,7 @@ void binaryTree::printAVL()
 {
     nodeStatistics treeStats = root->getStats();
 
+    //get min and max of the given Tree
     int maxKey = root->getMax();
     int minKey = root->getMin();
 
